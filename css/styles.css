@@ -1,47 +1,67 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	/** Nice reset! */
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background: #333;
-    color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	background: #333;
+	color: #fff;
 }
 
 .container {
-    max-width: 500px;
-    height: 100vh;
-    margin: auto;
-    border: 1px dotted #C2E812;
-    display: flex;
+	max-width: 500px;
+	height: 100vh;
+	margin: auto;
+	border: 1px dotted #c2e812;
+	display: flex;
+	flex-wrap: wrap; /*? We need this when we set the width to 100% we set the blue box to wrap over onto the next line. In short this is for our flex example. */
+	align-content: flex-start; /*? We can use align-content to align multi line flex boxes. We'll need this since we've wrapped our blue box on to a new line. In short here is the difference align-content is for multi lines and align-items is for single lines. Also align-content doesn't work for single lines and align-items doesn't work for multi lines. Read more here ---> https://stackoverflow.com/questions/27539262/whats-the-difference-between-align-content-and-align-items */
 }
 
 .box {
-    height: 25%;
-    width: 100%;
-    margin: 25px 0;
+	height: 25%;
+	/* width: 100%; */ /*? I would recommend using 50% instead of 100%. At 100% is a little confusing as they are still only occupying only 50% of there container each. */
+	width: 50%;
+	margin: 25px 0;
 }
 
+/*? I just added in some other ways you could accomplish this. Also as a personal preference thing I like to make my selectors as specific as possible by specifying all box classes inside of the container class. */
 .box:first-child {
-    border: 1px solid tomato;
+	border: 1px solid tomato;
 }
+
+/* .container .box:nth-child(1) {
+	border: 1px solid tomato;
+} */
+
+/* .container .box:nth-child(odd) {
+	border: 1px solid tomato;
+} */
 
 .box:last-child {
-    border: 1px solid lightblue;
+	border: 1px solid lightblue;
 }
 
-@media (max-width: 500px) {
-    .box {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 10px;
-    }
+/* .container .box:nth-child(2) {
+	border: 1px solid lightblue;
+} */
 
-    .container {
-        display: flex;
-        flex-direction: column;
-    }
+/* .container .box:nth-child(even) {
+	border: 1px solid lightblue;
+} */
+
+@media (max-width: 500px) {
+	.box {
+		width: 100%;
+		/* box-sizing: border-box; */ /*! We actually don't need this as you have set it to border-box under * so, this property has already been set */
+		padding: 10px;
+	}
+
+	.container {
+		/* display: flex; */ /*! We don't need this here as its already declared earlier on line 19 */
+		/* flex-direction: column; */ /** Nice! Good to use flex-direction, we can also use width 100%, its less clean but lets take a look. */
+	}
 }
