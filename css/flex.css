@@ -1,205 +1,173 @@
-
+/*! Don't have a ton of feedback, it all looks great, I really like that you broke up all the CSS in sections of styling I might now put so much space between them but to each is own. I added the same thing in the HTML document. Check out the feedback I additionally added in my solution in the harcourt_solution folder to see a different way to achieve the same goal. Overall great job! */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
-    
+	font-family: sans-serif;
 }
-
-
-
-
-
-
 
 /*===== Navbar =====*/
 
 nav {
-    height: 50px;
-    width: 100%;
-    background: #333;
-    color: #fff;
-    position: fixed;
+	height: 50px;
+	width: 100%;
+	background: #333;
+	color: #fff;
+	position: fixed;
 }
 
 nav ul {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    padding-top: 15px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	padding-top: 15px;
 }
 
 nav li {
-    padding: 0 2rem;
-    list-style: none;
+	padding: 0 2rem;
+	list-style: none;
 }
-
-
-footer {
-    background: #333333;
-    color: #fff;
-    text-align: center;
-}
-
-
-
-
-
-
-
 
 /*===== Showcase Section =====*/
 #showcase {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 3rem;
-    color: #fff;
-    background: mediumseagreen;
+	/* width: 100vw; */
+	width: 100%; /*? Not super sure as to why however 100vw was causing some additional width to be added, giving those horizontal scroll bars. */
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0 3rem;
+	color: #fff;
+	background: mediumseagreen;
 }
 
 #showcase h1 {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
-
-
-
-
-
-
-
 
 /*===== Content Start =====*/
 
-
 .info {
-    display: flex;
-    flex-wrap: wrap;
-    height: 50vh;
-    width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	height: 50vh;
+	width: 100%;
 }
 
-
 .img {
-    width: 50%;
+	width: 50%;
 }
 
 .content {
-    width: 50%;
-    text-align: center;
-    padding: 1rem;
-    padding-top: 190px;
-
+	width: 50%;
+	text-align: center;
+	/* padding: 1rem; */
+	/* padding-top: 190px; */
+	padding: 0 1rem;
+	display: flex; /*? Added this to center the text */
+	flex-direction: column; /*? Added this to center the text */
+	justify-content: center; /*? Centering vertically */
 }
 
-
-
-
-
 h2 {
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid #fff;
+	margin-bottom: 0.5rem;
+	border-bottom: 1px solid #fff;
 }
 
 .info-1 {
-    background: firebrick;
-    color: #fff;
+	background: firebrick;
+	color: #fff;
 }
-
 
 .info-1 .img {
-    background-image: url(../imgs/cat.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+	background-image: url('../imgs/cat.jpeg'); /*? I always pass them as strings however omitting the quotation marks works as well */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
-
 .info-1 .content {
-    text-align: right;
+	text-align: right;
+	align-items: flex-end; /*? horizontal alignment */
 }
 
 .info-2 {
-    background: steelblue;
-    color: #fff;
+	background: steelblue;
+	color: #fff;
 }
 
 .info-2 .img {
-    background-image: url(../imgs/dog.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    flex-direction: column-reverse;
+	background-image: url('../imgs/dog.jpeg'); /*? I always pass them as strings however omitting the quotation marks works as well */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	flex-direction: column-reverse;
 }
 
 .info-2 .content {
-    text-align: left;
+	text-align: left;
+	align-items: flex-start; /*? vertical alignment */
 }
-
-
-
-
-
-
-
-
 
 /*===== Footer Start =====*/
 
+/*! I moved this here from up top */
 footer {
-    height: 50px;
-    width: 100%;
-    padding-top: 15px;
+	background: #333333;
+	color: #fff;
+	text-align: center;
 }
 
-
-
-
-
-
+footer {
+	height: 50px;
+	width: 100%;
+	padding-top: 15px;
+}
 
 @media only screen and (max-width: 500px) {
-    
-    .info {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+	.info {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
 
-    .img {
-        width: 100%;
-        height: 50%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    
-    .content {
-        width: 100%;
-        height: 50%;
-    }
+	.img {
+		width: 100%;
+		height: 50%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
 
-    .info-2 .img {
-        order: 3;
-    }
+	.content {
+		width: 100%;
+		height: 50%;
+	}
 
-    .info-2 .content {
-        order: 4;
-    }
-    
-    .content {
-        padding-top: 60px;
-    }
+	.info-2 .img {
+		order: 3; /*! Nice use of the order property! I used a different solution feel free to check it out. */
+	}
+
+	.info-2 .content {
+		order: 4;
+	}
+
+	/*? Adding styles to center things */
+	.info-1 .content,
+	.info-2 .content {
+		align-items: center;
+		text-align: center; /*? Aligning our text to the middle */
+	}
+
+	/*! Already have a .content selector put styles here this is also skewing the text form the center */
+	/* .content {
+		padding-top: 60px;
+	} */
 }
-
-
